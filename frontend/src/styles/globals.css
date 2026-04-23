@@ -32,3 +32,27 @@ body {
 .error {
   color: #fb7185;
 }
+
+.progressRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.progressNode {
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.progressNode.done {
+  border-color: #2563eb;
+  color: #93c5fd;
+}
+
+.progressNode.active {
+  border-color: #10b981;
+  color: #86efac;
+}

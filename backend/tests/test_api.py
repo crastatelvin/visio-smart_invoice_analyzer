@@ -18,3 +18,13 @@ def test_scan_rejects_unsupported_file():
     )
     assert res.status_code == 400
     assert "Unsupported" in res.json()["error"]
+
+
+def test_scan_rejects_invalid_pdf_mode():
+    res = client.post(
+        "/scan?pdf_mode=bad_mode",
+        files={"file": ("doc.txt", b"hello", "text/plain")},
+    )
+    assert res.status_code == 400
+    body = res.json()
+    assert body["code"] == "invalid_pdf_mode"

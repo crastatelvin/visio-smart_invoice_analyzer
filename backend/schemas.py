@@ -30,6 +30,9 @@ class ScanResult(BaseModel):
     quality_score: int = Field(default=0, ge=0, le=100)
     confidence: int = Field(default=0, ge=0, le=100)
     raw_model_output: str = ""
+    page_count: int = 1
+    processed_page_count: int = 1
+    pdf_mode: str = "first_page"
 
 
 class ScanResponse(BaseModel):
@@ -47,5 +50,7 @@ class AskResponse(BaseModel):
 
 
 class ApiError(BaseModel):
+    code: str = "unknown_error"
     error: str
+    status: int = 500
     details: dict[str, Any] | None = None
