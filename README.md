@@ -27,6 +27,7 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
+- [Application Preview](#-application-preview)
 - [Features](#-features)
 - [Architecture](#-architecture)
 - [Tech Stack](#-tech-stack)
@@ -53,6 +54,42 @@ Users can:
 - Ask natural-language questions about the scanned document
 - Copy full JSON output for downstream automation
 - Run with optional API-key auth, request IDs, and SQLite persistence
+
+---
+
+## 🖼️ Application Preview
+
+<div align="center">
+
+### 1) Landing Page
+
+![Landing Page](docs/screenshots/01-landing-page.png)
+
+<br/>
+
+### 2) Dashboard
+
+![Dashboard](docs/screenshots/02-dashboard.png)
+
+<br/>
+
+### 3) Entities
+
+![Entities](docs/screenshots/03-entities.png)
+
+<br/>
+
+### 4) Keyvalues
+
+![Keyvalues](docs/screenshots/04-keyvalues.png)
+
+<br/>
+
+### 5) Tables with Chat bot for more insights
+
+![Tables with Chat bot for more insights](docs/screenshots/05-tables-chatbot.png)
+
+</div>
 
 ---
 
@@ -304,3 +341,7 @@ See [`DECISIONS.md`](./DECISIONS.md) for architecture rationale, including:
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](./LICENSE).
+
+### Built by [Telvin Crasta](https://github.com/crastatelvin) · Production-ready · Live today
+
+⭐ **If VISIO helped you ship invoice intelligence faster, star the repo.**
