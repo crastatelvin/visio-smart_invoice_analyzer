@@ -118,20 +118,20 @@ Users can:
 │                                                                   │
 │  UploadPage ──► ScannerPage ──► Tabs (Summary/Entities/KV/Tables) │
 │      │              │                    │                        │
-│      └────── POST /scan + WS /ws ◄──────┘                        │
-│                         POST /ask                                  │
+│      └────── POST /scan + WS /ws ◄──────┘                         │
+│                         POST /ask                                 │
 └──────────────────────────────┬────────────────────────────────────┘
                                │
                                ▼
 ┌───────────────────────────────────────────────────────────────────┐
 │                          FastAPI Backend                          │
 │                                                                   │
-│  Middleware: CORS + request-id logging + optional API-key auth   │
+│  Middleware: CORS + request-id logging + optional API-key auth    │
 │                                                                   │
-│  /scan  ─► document_processor.py  ─► vision_analyzer.py          │
-│                                  └► groq_service.py              │
-│                                  └► entity_extractor.py          │
-│                                  └► structured_extractor.py      │
+│  /scan  ─► document_processor.py  ─► vision_analyzer.py           │
+│                                  └► groq_service.py               │
+│                                  └► entity_extractor.py           │
+│                                  └► structured_extractor.py       │
 │                                                                   │
 │  /ask   ─► groq_service.py                                        │
 │  /ws    ─► job-scoped progress stream                             │
@@ -342,6 +342,6 @@ See [`DECISIONS.md`](./DECISIONS.md) for architecture rationale, including:
 
 This project is licensed under the MIT License. See [LICENSE](./LICENSE).
 
-### Built by [Telvin Crasta](https://github.com/crastatelvin) · Production-ready · Live today
+                            ### Built by [Telvin Crasta](https://github.com/crastatelvin) · Production-ready · Live today
 
-⭐ **If VISIO helped you ship invoice intelligence faster, star the repo.**
+                                      ⭐ **If VISIO helped you ship invoice intelligence faster, star the repo.**
