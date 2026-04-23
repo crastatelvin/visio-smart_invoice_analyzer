@@ -12,6 +12,7 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [scanning, setScanning] = useState(false);
   const [scannerView, setScannerView] = useState(false);
+  const [scanError, setScanError] = useState("");
   const wsUrl = useMemo(() => (jobId ? `${WS_BASE}?job_id=${encodeURIComponent(jobId)}` : ""), [jobId]);
 
   const handleWsMessage = useCallback((payload) => {
@@ -33,6 +34,7 @@ export default function App() {
     setResult(null);
     setScanning(true);
     setScannerView(true);
+    setScanError("");
     setScanStep("uploading");
   };
 
@@ -41,12 +43,14 @@ export default function App() {
     setResult(response.result);
     setScanning(false);
     setScannerView(true);
+    setScanError("");
     setScanStep("complete");
   };
 
-  const handleScanError = () => {
+  const handleScanError = (message) => {
     setScanning(false);
-    setScannerView(false);
+    setScannerView(true);
+    setScanError(message || "Scan failed");
     setScanStep("error");
   };
 
@@ -54,6 +58,7 @@ export default function App() {
     setResult(null);
     setScanning(false);
     setScannerView(false);
+    setScanError("");
     setScanStep("");
   };
 
@@ -66,6 +71,7 @@ export default function App() {
       scanStep={scanStep}
       onReset={reset}
       jobId={jobId}
+      error={scanError}
     />
   ) : (
     <UploadPage onScanStart={handleScanStart} onScanComplete={handleScanComplete} onScanError={handleScanError} />

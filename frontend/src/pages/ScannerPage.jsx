@@ -4,7 +4,7 @@ import DocumentStats from "../components/DocumentStats";
 import ScanProgress from "../components/ScanProgress";
 import VisioChat from "../components/VisioChat";
 
-export default function ScannerPage({ data, imageBase64, mediaType, scanning, scanStep, onReset, jobId }) {
+export default function ScannerPage({ data, imageBase64, mediaType, scanning, scanStep, onReset, jobId, error }) {
   return (
     <div className="scanner-shell">
       <div className="scanner-top">
@@ -12,6 +12,7 @@ export default function ScannerPage({ data, imageBase64, mediaType, scanning, sc
         <button className="upload-btn" onClick={onReset}>NEW SCAN</button>
       </div>
       <ScanProgress currentStep={scanStep} visible={scanning} />
+      {error && <div className="error">{error}</div>}
       {data && <DocumentStats data={data} />}
       <div className="scanner-grid">
         <ScannerViewport imageBase64={imageBase64} mediaType={mediaType} scanning={scanning} analysisData={data} />
